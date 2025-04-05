@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+<p id="currentTime"style="strong"></p>
+<h3>Add your To Do List here</h3>
+<form id="myForm">
+    <input id="myInput" type="text">
+    <button style="background-color: rgb(0, 255, 55); border-radius: 20px;">Add</button>
+</form>
+<br>
+<h3>To Do List</h3>
+<ul id="myItem"></ul>
+<br> 
+<h3>upload list</h3>
+<input type="file">
+    <script>
+ var myForm = document.getElementById ("myForm")
+ var myInput = document.getElementById ("myInput")
+ var myItem = document.getElementById ("myItem")
+ 
+ myForm.addEventListener("submit" ,
+function (event){
+    event.preventDefault()
+        createItem(myInput.value)
+})
+
+function createItem(InputItems){
+    var items = `<li><strong><mark>${InputItems}
+<button onclick="deleteElement(this)"style="background-color: red; border-radius: 20px;">Delete</button><mark><strong></li>`
+myItem.insertAdjacentHTML("beforeend" , items) 
+
+myInput.value=""
+myInput.focus()
+}
+
+function deleteElement(ElementToDelete){
+ElementToDelete.parentElement.remove()}
+
+function showTime() {
+	document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
+    </script>
+
+    </body>
+</html>
