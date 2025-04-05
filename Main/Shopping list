@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="styles.css"/>
+        <style>
+         body {
+    background: linear-gradient(to right, #056bc4c7,  #41026b);
+    font-family: 'Courier New', Courier, monospace;
+  }   
+        </style>
     </head>
     <body>
-<p id="currentTime"style="strong"></p>
-<h3>Add your To Do List here</h3>
+<h3>Add your Shopping List</h3>
 <form id="myForm">
     <input id="myInput" type="text">
     <button style="background-color: rgb(0, 255, 55); border-radius: 20px;">Add</button>
 </form>
 <br>
-<h3>To Do List</h3>
+<h3>Your Shopping List</h3>
 <ul id="myItem"></ul>
 <br> 
 <h3>upload list</h3>
@@ -48,5 +53,8 @@ setInterval(function () {
 }, 1000);
     </script>
 
+<a href="home.html">
+    <button>BACK!</button>
+   </a>
     </body>
 </html>
